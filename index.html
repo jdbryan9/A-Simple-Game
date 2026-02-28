@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Brick Breaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hud">
+      <h1>Neon Brick Breaker</h1>
+      <div class="stats">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Lives: <strong id="lives">1</strong></span>
+      </div>
+    </header>
+
+    <canvas id="gameCanvas" width="960" height="600" aria-label="Brick breaker game canvas"></canvas>
+
+    <div class="overlay" id="overlay">
+      <h2 id="overlayTitle">Press Space to Start</h2>
+      <p id="overlayText">Use the left and right arrow keys to move the paddle.</p>
+      <button id="actionButton">Start Game</button>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
