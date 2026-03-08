@@ -1,0 +1,110 @@
+:root {
+  color-scheme: dark;
+  --bg-start: #0a1028;
+  --bg-end: #131a46;
+  --panel: rgba(16, 26, 66, 0.88);
+  --text: #f2f6ff;
+  --accent: #4de3ff;
+  --accent-2: #9f6fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1d2b72 0%, var(--bg-start) 45%, #060914 100%);
+  color: var(--text);
+}
+
+.game-shell {
+  width: min(96vw, 980px);
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(17, 30, 76, 0.95), rgba(8, 12, 28, 0.95));
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55), 0 0 28px rgba(77, 227, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hud h1 {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  letter-spacing: 0.05em;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  font-weight: 500;
+}
+
+.stats strong {
+  color: var(--accent);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: linear-gradient(180deg, #0a1236 0%, #0a0f25 40%, #050812 100%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 56px 0 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px;
+  background: radial-gradient(circle at center, rgba(12, 20, 60, 0.65), rgba(2, 3, 10, 0.82));
+  backdrop-filter: blur(3px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.overlay p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+button {
+  justify-self: center;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #040814;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(77, 227, 255, 0.45);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
